@@ -131,7 +131,7 @@
         </div>
 
 <!-- Guests -->
-        <div class="col col-lg-2 col-md-2 co1-sm-12">
+        <div class="col col-lg-1 col-md-1 col-sm-12">
           <div class="input-group">
             <input id="guests" type="number" name="quant[1]" class="form-control input-number" step="1" min="1" max="4" value="1" aria-describedby="basic-addon1">
 
@@ -139,6 +139,16 @@
               <label class="input-group-text bg-white" for="inputGroupSelect01"><i class="fas fa-user-alt"></i></label>
             </div>
           </div>
+        </div>
+        <div class="col col-lg-2 col-md-2 col-sm-12">
+          <select class="form-control place" id="meal">
+            <option>Meal Options</option>
+            <option value="15">Breakfast</option>
+            <option value="25">Lunch</option>
+            <option value="25">Dinner</option>
+            <option value="60">All</option>
+            <option value="0">None</option>
+          </select>
         </div>
 
         <button id="search" type="button" class="btn btn-warning searchBtn">SEARCH</button>
@@ -157,9 +167,10 @@
 
         <!-- information of days and people -->
                 <div class="row clearfix">
-                  <div id="days" class="col-4 bg-secondary text-white text-right"></div>
-                  <div id="people" class="col-4 bg-secondary text-center text-white"></div>
-                  <div id="place" class="col-4 bg-secondary text-white"></div>
+                  <div id="days" class="col-3 bg-secondary text-white text-right"></div>
+                  <div id="people" class="col-3 bg-secondary text-center text-white"></div>
+                  <div id="place" class="col-3 bg-secondary text-white"></div>
+                  <div id="meal" class="col-3 bg-secondary text-white"></div>
                 </div>
 
 

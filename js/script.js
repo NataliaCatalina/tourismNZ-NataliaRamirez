@@ -9,9 +9,9 @@ console.log(script);
 
 function initMap() {
 
-  // The location of Uluru
+  // The location of New Zealand
   const wellington = { lat: -41.2489187, lng: 174.7001308 };
-  // The map, centered at Uluru
+  // The map, centered at New Zealand
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 7,
     center: wellington,
@@ -29,55 +29,62 @@ function initMap() {
 
    }
 
-  function  filterAccommodation(xDays, xGuests, xCity){
-   console.log(xDays, xGuests, xCity);
+  function  filterAccommodation(xDays, xGuests, xCity, xMeal){
+   console.log(xDays, xGuests, xCity, xMeal);
   var i;
    $('#days').text('Your trip is' + ' ' + xDays + ' ' + 'days');
-   $('#people').text('for' + ' ' + xGuests + ' ' + 'guests');
-   $('#place').text('in' + ' ' + xCity );
+   $('#people').text('For' + ' ' + xGuests + ' ' + 'guests');
+   $('#place').text('In' + ' ' + xCity );
+  // $('#meal').text('With' + ' ' + xMeal );
    for ( i  = 0 ; i < accommodation.length; i++) {
      // console.log(i, accommodation[i].name);
      if (( (xDays <= accommodation[i].maxNight) && (xDays >= accommodation[i].minNight)) &&
       ( (xGuests <= accommodation[i].maxGuest) && (xGuests >= accommodation[i].minGuest)) && (xCity === accommodation[i].city)){
        console.log(accommodation[i].name);
-       displayAccommodation(i);
+
+// ==========================================================
+// Calculate accommodation cost
+// ==========================================================
+
+       var totalCost = (accommodation[i].price + (xMeal*xGuests)) * xDays ;
+       console.log(totalCost);
+       displayAccommodation(i, totalCost);
 
      }
    }
   }
 
-
   // ==========================================================
   // Display accommodation
   // ==========================================================
 
-  function displayAccommodation(j){
+  function displayAccommodation(j, cost){
 
     $('#accommodationResults').append ('<div>' +
                           '<img src="images/' + accommodation[j].photo1 + '" class="card-img-top p-3 rounded" alt="' + '">' +
                           '<p class="card-text text-dark font-weight-bold pl-3 pr-3">' + ' ' + '<span>' + accommodation[j].name + '</span> <br></p>' +
                           '<p class="card-text text-dark font-weight-normal pl-3 pr-3">' + ' ' + '<span>' + accommodation[j].description + '</span> <br></p>' +
                           '<div class="text-center text-dark iconFacilities">' + ' ' + '<span>' + accommodation[j].facilities + '</span> <br></p>' +
-                          '<div class="text-center display-2">$'+ ' ' + '<span>' + accommodation[j].price + '</span> <br></p>' +
+                          '<div class="text-center display-2">$'+ ' ' + '<span>' + accommodation[j].price + ' per night </span> <br></p>' +
+                          '<div class="mb-3">Total cost : $ ' + cost + '</div>'+
                           '<button type="button" class="btn btn-warning font-weight-bold text-white moreDetails" data-toggle="modal" data-target="#exampleModal">BOOK NOW</button>' +
                           '<div class="pt-3 mx-auto separationLine"></div>' +
+
                           '</div>'
                           ); //append ends here
 
    }; //displayCards
 
 
-
   $('#search').click(function(){
     var days = dateDiff();
     var guests = parseInt($('#guests').val());
     var city = $('#city').val();
-    console.log(days, guests, city);
-    filterAccommodation(days,guests, city);
+    var meal = parseInt($('#meal').val());
+    console.log(days, guests, city, meal);
+    filterAccommodation(days,guests, city, meal);
     var i;
-      // $('#days').text('Your trip is' + ' ' + xDays + ' ' + 'days');
-      // $('#people').text('for' + ' ' + xGuests + ' ' + 'guests');
-      // $('#place').text('in' + ' ' + xCity );
+
       for ( i  = 0 ; i < accommodation.length; i++) {
         // console.log(i, accommodation[i].name);
         if (( (days <= accommodation[i].maxNight) && (days >= accommodation[i].minNight)) &&
@@ -92,39 +99,8 @@ function initMap() {
 
         }
       }
-
   });
 }
-
-
-
-//   var i;
-//         for (i = 0 ; i < accommodation.length; i++){
-//           console.log(accommodation[i].lat, accommodation[i].lng);
-//           var location = { lat : accommodation[i].lat, lng: accommodation[i].lng}
-//
-//   // The marker, positioned at Uluru
-//   const marker = new google.maps.Marker({
-//     position: newzealand,
-//     map: map,
-//   });
-// }
-// }
-//
-//   // The location of Uluru
-//   const newzealand = { lat: -41.0216435, lng: 172.5002432 };
-//   // The map, centered at Uluru
-//   const map = new google.maps.Map(document.getElementById("map"), {
-//     zoom: 4,
-//     center: newzealand,
-//   });
-//   // The marker, positioned at Uluru
-//   const marker = new google.maps.Marker({
-//     position: newzealand,
-//     map: map,
-//   });
-//
-// }
 
 // ==========================================================
 // Accommodation Objects
@@ -478,8 +454,6 @@ function carousel() {
 // Calendar
 // ==========================================================
 
-
-
 //for map script to be added to body
 $('body').append(script);
 
@@ -508,12 +482,6 @@ $('body').append(script);
    changeMonth : true
  });
 
-
-
-
-
-
-
 // ==========================================================
 // Validation form
 // ==========================================================
@@ -525,8 +493,6 @@ $('body').append(script);
 //     return false;
 //   }
 // }
-
-
 
 
  // ==========================================================
@@ -555,15 +521,6 @@ function cardModal(){
   }); // end of moreDetails click event
 
 } //cardModal
-
-
-
-
-
-
-
-
-
 
 
 
