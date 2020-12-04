@@ -21,10 +21,8 @@ html {
 
 .logo-nav {
   width: 400px;
-//  width: 50%;
   height: auto;
 }
-
 
 .hero-image {
    height: 900px;
@@ -33,6 +31,26 @@ html {
    background-size: cover;
    position: relative;
  }
+
+.welcome-txt {
+ width: 40%;
+ height: 500px;
+ margin: auto;
+ position: absolute;
+ top: 50%;
+ left: 30%;
+ z-index: 2;
+ color: white;
+}
+.circle {
+  width: 700px;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  top: 20%;
+  left: 32%;
+  z-index: 2;
+}
 
 .calendar {
   height: 35px;
@@ -101,63 +119,10 @@ html {
 
 .logoFooter {
   width: 400px;
- // width: 50%;
   height: auto;
 }
 
-// .radial-gradient {
-//   box-shadow:
-//
-// }
-
-
-
-//home circle and welcome
-
-.welcome-txt {
-  width: 40%;
-  height: 500px;
-  margin: auto;
-  position: absolute;
-  top: 50%;
-  left: 30%;
-  z-index: 2;
-  color: white;
+.fa-check-circle {
+  font-size: 60px;
+  color: #FCB036;
 }
- .circle {
-   width: 700px;
-   height: auto;
-   margin: auto;
-   position: absolute;
-   top: 20%;
-   left: 32%;
-   z-index: 2;
- }
-
-// @media screen and (min-width: 601px) and (max-width: 992px){
-//   .circle {
-//     width: 500px;
-//     height: auto;
-//     margin: auto;
-//     position: absolute;
-//     top: 20%;
-//     left: 10%;
-//     z-index: 2;
-//   }
-//
-//   .welcome-txt {
-//     width: 40%;
-//     height: 500px;
-//     margin: auto;
-//     position: absolute;
-//     top: 50%;
-//     left: 30%;
-//     z-index: 2;
-//     color: white;
-//   }
-//
-// }
-//
-// @media screen and (max-width:600px){
-//
-// }

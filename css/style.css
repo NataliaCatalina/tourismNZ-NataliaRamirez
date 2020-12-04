@@ -7814,6 +7814,25 @@ html {
   background-size: cover;
   position: relative; }
 
+.welcome-txt {
+  width: 40%;
+  height: 500px;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  z-index: 2;
+  color: white; }
+
+.circle {
+  width: 700px;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  top: 20%;
+  left: 32%;
+  z-index: 2; }
+
 .calendar {
   height: 35px;
   width: 30px; }
@@ -7872,23 +7891,8 @@ html {
   width: 400px;
   height: auto; }
 
-.welcome-txt {
-  width: 40%;
-  height: 500px;
-  margin: auto;
-  position: absolute;
-  top: 50%;
-  left: 30%;
-  z-index: 2;
-  color: white; }
-
-.circle {
-  width: 700px;
-  height: auto;
-  margin: auto;
-  position: absolute;
-  top: 20%;
-  left: 32%;
-  z-index: 2; }
+.fa-check-circle {
+  font-size: 60px;
+  color: #FCB036; }
 
 /*# sourceMappingURL=style.css.map */

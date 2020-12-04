@@ -1,7 +1,5 @@
-
-console.log(key);
 var script = '<script src="https://maps.googleapis.com/maps/api/js?key='+ key +'&callback=initMap&libraries=places&v=weekly" async defer></script>';
-console.log(script);
+
 
 // ==========================================================
 // The Map
@@ -9,10 +7,10 @@ console.log(script);
 
 function initMap() {
 
-  // The location of New Zealand
-  const wellington = { lat: -41.2489187, lng: 174.7001308 };
-  // The map, centered at New Zealand
-  const map = new google.maps.Map(document.getElementById("map"), {
+// The location of New Zealand
+  var wellington = { lat: -41.2489187, lng: 174.7001308 };
+// The map, centered at New Zealand
+  var map = new google.maps.Map(document.getElementById("map"), {
     zoom: 7,
     center: wellington,
   });
@@ -24,30 +22,30 @@ function initMap() {
     var end = $(endDate).datepicker('getDate');
 
     var days = (end-start)/1000/60/60/24; //to get human readable days
-    console.log(days);
+
     return (days);
 
    }
 
   function  filterAccommodation(xDays, xGuests, xCity, xMeal){
-   console.log(xDays, xGuests, xCity, xMeal);
+
   var i;
    $('#days').text('Your trip is' + ' ' + xDays + ' ' + 'days');
    $('#people').text('For' + ' ' + xGuests + ' ' + 'guests');
    $('#place').text('In' + ' ' + xCity );
-  // $('#meal').text('With' + ' ' + xMeal );
+   //$('#meal').text('With' + ' ' + xMeal );
    for ( i  = 0 ; i < accommodation.length; i++) {
-     // console.log(i, accommodation[i].name);
+
      if (( (xDays <= accommodation[i].maxNight) && (xDays >= accommodation[i].minNight)) &&
       ( (xGuests <= accommodation[i].maxGuest) && (xGuests >= accommodation[i].minGuest)) && (xCity === accommodation[i].city)){
-       console.log(accommodation[i].name);
+
 
 // ==========================================================
 // Calculate accommodation cost
 // ==========================================================
 
        var totalCost = (accommodation[i].price + (xMeal*xGuests)) * xDays ;
-       console.log(totalCost);
+
        displayAccommodation(i, totalCost);
 
      }
@@ -73,7 +71,7 @@ function initMap() {
                           '</div>'
                           ); //append ends here
 
-   }; //displayCards
+   } //displayCards
 
 
   $('#search').click(function(){
@@ -81,18 +79,18 @@ function initMap() {
     var guests = parseInt($('#guests').val());
     var city = $('#city').val();
     var meal = parseInt($('#meal').val());
-    console.log(days, guests, city, meal);
+
     filterAccommodation(days,guests, city, meal);
     var i;
 
       for ( i  = 0 ; i < accommodation.length; i++) {
-        // console.log(i, accommodation[i].name);
+
         if (( (days <= accommodation[i].maxNight) && (days >= accommodation[i].minNight)) &&
          ( (guests <= accommodation[i].maxGuest) && (guests >= accommodation[i].minGuest)) && (city === accommodation[i].city)){
-          console.log(accommodation[i].name);
-          var location = { lat : accommodation[i].latitude, lng: accommodation[i].longitude}
-          // The marker, positioned at Uluru
-          const marker = new google.maps.Marker({
+
+          var location = { lat : accommodation[i].latitude, lng: accommodation[i].longitude};
+
+          var marker = new google.maps.Marker({
             position: location,
             map: map,
           });
@@ -494,34 +492,22 @@ $('body').append(script);
 //   }
 // }
 
-
- // ==========================================================
-// Modal Accommodation  ????????????????????????????????????????????????????????????????
-// ==========================================================
-
-function cardModal(){
-  $('.moreDetails').click(function(){
-  $('#accommodationPhoto').text(' '); //clearing the content
-
-    var accommodation = '';
-    var i = 0;
-    for (i = 0; i < accommodation.length; i++) {
-      if (parseInt(this.id) === accommodation[i].id) {
-      type = accommodation[i].type;
-          $('#exampleModal').text(accommodation[i].name);
-          //append will keep  adding to existing content, so clear if you want
-          //or else use html to replace existing content
-          $('#accommodationPhoto').append('<img class="img-fluid" src="images/' + accomodation[i].photo1 + '" alt="' + accommodation[i].name + '"/>' +
-          '<p class="text-danger">'+ accommodation[i].detail +'</p>');
-
-      } //end of if statement
-
-    }//end of for statement
-
-  }); // end of moreDetails click event
-
-} //cardModal
-
-
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('button', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
 
 }); //document.ready()
