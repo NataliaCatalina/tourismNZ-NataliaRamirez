@@ -7819,49 +7819,17 @@ html {
   height: 500px;
   margin: auto;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 30%;
   z-index: 2;
   color: white; }
-
-.circle {
-  width: 700px;
-  height: auto;
-  margin: auto;
-  position: absolute;
-  top: 20%;
-  left: 32%;
-  z-index: 2; }
 
 .calendar {
   height: 35px;
   width: 30px; }
 
-.searchBtn {
-  width: 10%;
-  height: 39px; }
-
 .mySlides {
   display: none; }
-
-.welcome-txt {
-  width: 40%;
-  height: 500px;
-  margin: auto;
-  position: absolute;
-  top: 50%;
-  left: 30%;
-  z-index: 2;
-  color: white; }
-
-.circle {
-  width: 700px;
-  height: auto;
-  margin: auto;
-  position: absolute;
-  top: 20%;
-  left: 32%;
-  z-index: 2; }
 
 .infoIcon {
   font-size: 40px;

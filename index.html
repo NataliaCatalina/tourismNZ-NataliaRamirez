@@ -41,28 +41,18 @@
   </div>
 
 
-<!-- option 1 -->
-    <!-- <img class="circle" src="images/circle.png" alt="">
+<!-- welcome text -->
+    <!-- <img class="circle" src="images/circle.png" alt=""> -->
     <div class="welcome-txt">
-      <h1 class="text-center">Welcome to New Zealand!</h1>
-      <p class="text-center">Explore our range of accommodation</p>
-    </div> -->
-
-
-<!-- option 2 -->
-
-    <div class="welcome-txt ">
-      <div class="">
-        <h1 class="text-center ">Welcome to New Zealand!</h1>
-        <p class="text-center">Explore our range of accommodation</p>
-      </div>
+        <h1 class="text-center bg-dark">Welcome to New Zealand!</h1>
+        <p class="text-center bg-dark">Explore our range of accommodation</p>
     </div>
 
 <!-- section booking -->
   <section class="bookingForm jumbotron bg-dark m-5 rounded-lg">
 
 <!-- info button -->
-    <div class="col col-12 float-right">
+    <div class="col-12 float-right">
       <button type="button" class="btn float-right" data-toggle="modal" data-target="#exampleModal01">
         <i class="fas fa-info-circle float-right infoIcon"></i>
       </button>
@@ -91,9 +81,9 @@
    <form class="needs-validation" action="index.html" method="post">
 
 
-    <div class="row clearfix pl-5">
+    <div class="row clearfix pl-1">
 <!-- Location -->
-        <div class="col col-lg-3 col-md-4 col-sm-12">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 ">
           <div class="form-group">
             <div class="d-flex">
               <div class="input-group">
@@ -113,7 +103,7 @@
         </div>
 
 <!-- Date picker -->
-        <div class="col col-lg-2 col-md-2 col-xs-12">
+        <div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2">
           <div class="input-group">
             <input id="startDate" type="text" class="form-control datepicker1" placeholder="Check In" aria-describedby="basic-addon1">
             <div class="input-group-prepend">
@@ -122,7 +112,7 @@
           </div>
         </div>
 
-        <div class="col col-lg-2 col-md-2 col-xs-12">
+        <div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2">
           <div class="input-group">
             <input id="endDate" type="text" class="form-control datepicker2" placeholder="Check-out" aria-describedby="basic-addon2">
             <div class="input-group-prepend">
@@ -132,7 +122,7 @@
         </div>
 
 <!-- Guests -->
-        <div class="col col-lg-1 col-md-1 col-sm-12">
+        <div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 ">
           <div class="input-group">
             <input id="guests" type="number" name="quant[1]" class="form-control input-number" step="1" min="1" max="4" value="1" aria-describedby="basic-addon1">
 
@@ -141,7 +131,7 @@
             </div>
           </div>
         </div>
-        <div class="col col-lg-2 col-md-2 col-sm-12">
+        <div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2">
           <select class="form-control food" id="meal">
             <option>Meal Options</option>
             <option value="15">Breakfast $15</option>
@@ -152,7 +142,7 @@
           </select>
         </div>
 
-        <button id="search" type="button" class="btn btn-warning searchBtn">SEARCH</button>
+        <button id="search" type="button" class="btn btn-warning col-6 mx-auto m-3">SEARCH</button>
 
     </div>
 </form>
