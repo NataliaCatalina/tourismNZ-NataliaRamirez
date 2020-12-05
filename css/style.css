@@ -7824,6 +7824,9 @@ html {
   z-index: 2;
   color: white; }
 
+#exploreBtn {
+  font-size: 70px; }
+
 .calendar {
   height: 35px;
   width: 30px; }
