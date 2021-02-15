@@ -494,6 +494,38 @@ $('body').append(script);
 // Validation form
 // ==========================================================
 
+document.querySelector("#search").addEventListener('click', function(event){
+  event.preventDefault(); //stop the default page from loading
+
+  //capture form input values
+  let city= document.querySelector('#city')
+
+  //get reference to our error tags
+  let cityError = document.querySelector('#cityError');
+
+  console.log(city);
+
+  //we want to initialise an array to store feedback messages
+  let messages = []
+
+  //validate the form inputs by invoking the validate function
+  messages['cityError'] = validate(city);
+
+  cityError.textContent = messages['cityError'];
+
+  console.log(messages);
+  
+});
+
+
+function validate(userInput) {
+  console.log(userInput);
+
+  if(userInput == '-1') {
+      return 'Please provide your city!';
+  } 
+
+}
 
 // (function() {
 //   'use strict';
