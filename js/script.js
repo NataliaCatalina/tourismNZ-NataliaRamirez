@@ -498,11 +498,11 @@ document.querySelector("#search").addEventListener('click', function(event){
   event.preventDefault(); //stop the default page from loading
 
   //capture form input values
-  let city = document.querySelector('#city').value
+  let city = document.querySelector('#city').value;
 
   //get reference to our error tags
   let cityError = document.querySelector('#cityError');
-
+  
   console.log(city);
 
   //we want to initialise an array to store feedback messages
@@ -512,9 +512,7 @@ document.querySelector("#search").addEventListener('click', function(event){
   messages['cityError'] = validate(city);
 
   cityError.textContent = messages['cityError'];
-
   console.log(messages);
-  
 });
 
 
@@ -522,8 +520,9 @@ function validate(userInput) {
   console.log(userInput);
 
   if(userInput == 'Destination') {
-      return 'Please provide your city!';
-  } 
+      return 'Please fill all fields';
+  }
+     
 
 }
 

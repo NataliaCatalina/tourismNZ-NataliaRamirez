@@ -79,6 +79,10 @@
 
       <!-- form -->
       <form class="needs-validation" action="index.html" method="post" novalidate>
+        <div class="text-center mb-3">
+          <span class="errors text-warning" id="cityError"></span>
+        </div>
+        
 
         <div class="row clearfix pl-1">
           <!-- Location -->
@@ -86,7 +90,7 @@
             <div class="form-group">
               <div class="d-flex">
                 <div class="input-group">
-                  <span class="errors" id="cityError"></span>
+                  
                   <select class="form-control place" id="city">
                     <option value="Destination">Destination</option>
                     <option value="Auckland">Auckland</option>
@@ -106,7 +110,7 @@
           <!-- Date picker -->
           <div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2">
             <div class="input-group">
-              <input id="startDate" type="text" class="form-control datepicker1" placeholder="Check In" aria-describedby="basic-addon1">
+              <input id="startDate" type="text" class="form-control datepicker1" placeholder="Check-In" aria-describedby="basic-addon1">
               <div class="input-group-prepend">
                 <label class="input-group-text bg-white" for="startDate"><i class="fas fa-calendar-alt"></i></label>
               </div>
@@ -115,7 +119,7 @@
 
           <div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2">
             <div class="input-group">
-              <input id="endDate" type="text" class="form-control datepicker2" placeholder="Check-out" aria-describedby="basic-addon2">
+              <input id="endDate" type="text" class="form-control datepicker2" placeholder="Check-Out" aria-describedby="basic-addon2">
               <div class="input-group-prepend">
                 <label class="input-group-text bg-white" for="endDate"><i class="fas fa-calendar-alt"></i></label>
               </div>
@@ -135,7 +139,8 @@
 
           <div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2">
             <select class="form-control food" id="meal">
-              <option>Meal Options</option>
+
+              <option value="Meal">Meal Options</option>
               <option value="15">Breakfast $15</option>
               <option value="25">Lunch $25</option>
               <option value="25">Dinner $25</option>
