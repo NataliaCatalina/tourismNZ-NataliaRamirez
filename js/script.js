@@ -498,7 +498,7 @@ document.querySelector("#search").addEventListener('click', function(event){
   event.preventDefault(); //stop the default page from loading
 
   //capture form input values
-  let city= document.querySelector('#city')
+  let city = document.querySelector('#city').value
 
   //get reference to our error tags
   let cityError = document.querySelector('#cityError');
@@ -521,7 +521,7 @@ document.querySelector("#search").addEventListener('click', function(event){
 function validate(userInput) {
   console.log(userInput);
 
-  if(userInput == '-1') {
+  if(userInput == 'Destination') {
       return 'Please provide your city!';
   } 
 
