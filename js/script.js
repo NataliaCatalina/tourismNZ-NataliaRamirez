@@ -1,4 +1,4 @@
-var script = '<script src="https://maps.googleapis.com/maps/api/js?key='+ key +'&callback=initMap&libraries=places&v=weekly" async defer></script>';
+var script = '<script src="https://maps.googleapis.com/maps/api/js?key='+ "key" +'&callback=initMap&libraries=places&v=weekly" async defer></script>';
 
 
 // ==========================================================
